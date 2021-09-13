@@ -4,79 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quiz"
-        android:layout_marginTop="10dp"
-       android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_above="@+id/card"
-        android:fontFamily="@font/arsenal_bold"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/white"/>
-
-    <com.google.android.material.card.MaterialCardView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        android:layout_margin="10dp"
-        android:id="@+id/card"
-        android:layout_centerInParent="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/almendra_sc"
-                android:textColor="#777777"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/arsenal"
-                android:text="Please enter your name"
-                 />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:elevation="5dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
-                android:background="@drawable/edit_text_style"
-                android:fontFamily="@font/arsenal"
-                android:hint="Name"
-                android:id="@+id/nameET"
-                android:inputType="text"
-                android:padding="10dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Start"
-                android:id="@+id/startBtn"
-                android:fontFamily="@font/arsenal_bold"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"/>
-
-
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
 
 </RelativeLayout>
