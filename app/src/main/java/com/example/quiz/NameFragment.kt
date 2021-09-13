@@ -1,11 +1,13 @@
 package com.example.quiz
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.example.quiz.databinding.FragmentNameBinding
 
 class NameFragment : Fragment() {
@@ -31,7 +33,7 @@ class NameFragment : Fragment() {
             val name =binding.nameET.text.toString()
 
             if (!name.isEmpty()){
-                Toast.makeText(requireContext(),name,Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(it).navigate(R.id.action_nameFragment_to_questionsFragment)
             }else{
                 Toast.makeText(requireContext(),"Please enter your name",Toast.LENGTH_SHORT).show()
             }

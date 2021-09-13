@@ -1,9 +1,9 @@
-package com.example.quiz.helpers
+package com.example.quiz
 
 import com.example.quiz.R
 import com.example.quiz.models.QuestionModel
 
-object Contants {
+object Contantsss {
     fun getQuestions() : ArrayList<QuestionModel>{
         val questionList=ArrayList<QuestionModel>()
 
