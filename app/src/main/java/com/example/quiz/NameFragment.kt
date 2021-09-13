@@ -28,9 +28,14 @@ class NameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.startBtn.setOnClickListener{
-            Toast.makeText(requireContext(),"Clicked",Toast.LENGTH_SHORT).show()
+            val name =binding.nameET.text.toString()
+
+            if (!name.isEmpty()){
+                Toast.makeText(requireContext(),name,Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(requireContext(),"Please enter your name",Toast.LENGTH_SHORT).show()
+            }
         }
     }
-
 
 }
